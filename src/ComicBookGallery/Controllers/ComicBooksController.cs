@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComicBookGallery.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,15 +11,20 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-            ViewBag.SeriesTitle = "Harry Potter";
-            ViewBag.IssueNumber = 700;
-            ViewBag.Description = "<p>Harry Potter is a wizzard abc xyz </p>";
-            ViewBag.Artists = new string[] {
-                "Harry",
-                "Hermionie",
-                "Ron"
-    };
-            return View();
+            var comicBook = new ComicBook()
+            {
+                SeriesTitle = "Harry Potter",
+                IssueNumber = 700,
+                DescriptionHtml = "<p>Harry Potter is a wizzard abc xyz </p>",
+                Artists = new Artist[] {
+                new Artist() { Name = "Daniel", Role = "Harry"},
+                new Artist() { Name = "Emma", Role = "Herminone"},
+                new Artist() { Name = "Robert", Role = "Ron"}
+                }
+            };
+
+            
+            return View(comicBook);
         }
     }
 }
