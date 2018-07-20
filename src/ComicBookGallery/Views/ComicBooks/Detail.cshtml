@@ -1,5 +1,9 @@
 ﻿@{
     Layout = null;
+
+    var seriesTitle = "Harry Potter";
+    var issueNumber = 700;
+    var description = "<p>Harry Potter is a wizzard abc xyz </p>";
 }
 
 <!DOCTYPE html>
@@ -11,7 +15,10 @@
 </head>
 <body>
     <div>
-        <h1> Hello from our views</h1>
+        <h1>@seriesTitle</h1>
+        <h2>#@issueNumber</h2>
+        <h5>Desciption: </h5>
+        <div>@Html.Raw(description)</div>
     </div>
 </body>
 </html>
